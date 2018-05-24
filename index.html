@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IOT Oil Lamp</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/new-age.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Back to Top</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+         
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="./admin/index.html">Admin Controls</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+              <h1 class="mb-5">Welcome to the IOT enabled oil lamp<h1>
+              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Proceed to Light</a>
+            </div>
+          </div>
+          <div class="col-lg-5 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                    <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
+                  </div>
+       
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <style>
+    .button {
+
+        width: 300px;
+        height : 60px;
+        background-color: #2994ad; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        border: 2px solid #2994ad; 
+        margin-top : 20px;
+        border-radius: 30px;
+        font-family:Catamaran;
+    }
+
+    .button {
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+    }
+
+    .button:hover {
+        background-color: #00aaff; /* Green */
+        color: white;
+    }
+
+    .lamp {
+        display :table;
+    }
+
+    .state {
+        display : block;
+        -webkit-transition-duration: 2s; /* Safari */
+        transition-duration: 2s;
+
+        width : 150px;
+        height : 62px;
+        display: table-cell;
+        text-align :center;
+        vertical-align: center;
+        color : white;
+        background-color:#ff0000;
+        border: 2px solid black; 
+        margin-top : 10px;
+        margin-left:20px;
+        font-size:20px;
+        border-radius: 30px;
+        font-family:Catamaran;
+        }
+
+    #inviteMessage {
+        height: 20px;
+        opacity : 0;
+        -webkit-transition-duration: 1s; /* Safari */
+        transition-duration: 1s;
+        padding-top: 20px;
+        color : #3d787f;
+        font-size:25px;
+        font-family:Verdana;
+        font-weight:bold;
+    }
+
+    #adminLink {
+        float : right;
+        height: 30px;
+        width : 160px;
+        display : table-cell;
+        vertical-align: center;
+        background-color: black;
+        border: 2px solid black; 
+        color: white;
+        font-size : 16px;
+        margin-bottom: 20px;
+        padding: 0px 0px;
+    }
+
+    #adminLink:hover {
+        background-color: #404040; 
+        color: white;
+    }
+
+    .circle {
+      height: 20px;
+      width: 20px;
+      background-color: #555;
+      border-radius: 50%;
+      font-size:16px;
+      display:inline-block;
+    }
+
+    #bullet {
+      font-family:Catamaran;
+      font-size:20px;
+      color: red;
+    }
+
+    #bullet span{
+      font-family:Catamaran;
+      font-size:20px;
+      color: black;
+    }
+
+    ul {
+        text-align: center;
+        list-style-position: inside;
+    }
+
+    #head{
+      color:black;
+    }
+
+    #row_main {
+    	opacity : 0;
+    	-webkit-transition-duration: 1s; /* Safari */
+    	transition-duration: 1s;
+    }
+
+
+
+  </style>
+    <section class="download bg-primary text-center" id="download">
+      <div class="container">
+
+        <div class="row">
+        	
+
+          <div class="col-md-8 mx-auto">
+          		<h1 id = "head"> IOT Oil Lamp Lighting </h1> 
+
+          		<div id = "loading">
+          			<br>
+          			<p id = "lampConnectMsg"> Lamp not connected <p> <br> 	
+          			<img src = "./img/loading.gif"> 
+          		</div>
+
+          		<div id = "row_main">
+
+                <div id = "inviteMessage"> </div>  <br><br>
+
+                <button id = "lamp1Button" class = "button">Lamp 1</button> <button id = "lamp1Ind" class = "state"> OFF  </button> <br>
+                <button id = "lamp2Button" class = "button">Lamp 2</button> <button id = "lamp2Ind" class = "state"> OFF  </button> <br>
+                <button id = "lamp3Button" class = "button">Lamp 3</button> <button id = "lamp3Ind" class = "state"> OFF  </button> <br> <br> <br>
+
+                <ul> 
+                  <li id = "bullet"> <span> <span id = "connectMessage">Not connected </span> to server</span></li>
+                </ul>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/new-age.min.js"></script>
+
+    <script src="Lib/mqttws31.js" type="text/javascript"></script>
+
+    <script> 
+      // Create a client instance
+        client = new Paho.MQTT.Client("iot.eclipse.org", 443,"/ws", String(Math.floor((Math.random() * 1000000))));
+
+        // set callback handlers
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
+
+        // connect the client
+        client.connect({onSuccess:onConnect, useSSL : true});
+
+        // called when the client connects
+        var bullet = document.getElementById("bullet");
+        var connectMessage = document.getElementById("connectMessage");
+
+        function onConnect() {
+          bullet.style.color = "green"
+          connectMessage.textContent = "Connected"
+          // Once a connection has been made, make a subscription and send a message.
+            console.log("onConnect");
+            client.subscribe("lampState/#");
+            client.subscribe("lampInvite");
+            client.subscribe("lampNodeConnect");
+
+            message = new Paho.MQTT.Message("Hello");
+            message.destinationName = "lampConnect";
+            client.send(message);
+        }
+
+        var state1 = document.getElementById("lamp1Ind");
+        var state2 = document.getElementById("lamp2Ind");
+        var state3 = document.getElementById("lamp3Ind");
+
+        // called when the client loses its connection
+        function onConnectionLost(responseObject) {
+          bullet.style.color = "red"
+          connectMessage.textContent = "Not connected"
+
+          if (responseObject.errorCode !== 0) {
+            console.log("onConnectionLost:"+ responseObject.errorMessage);
+          }
+        }
+
+        var inviteMessage = document.getElementById("inviteMessage");
+
+        var loading = document.getElementById("loading");
+        var row_main = document.getElementById("row_main");
+
+
+        // called when a message arrives
+        function onMessageArrived(message) {
+          console.log("onMessageArrived:"+message.payloadString);
+          console.log("topic " + message.destinationName);
+
+
+          if (message.destinationName == "lampNodeConnect"){
+          	console.log("dfsaf")
+          	loading.style.display = "none"
+          	row_main.style.opacity = 1
+          }
+
+          if (message.destinationName == "lampInvite"){
+            var invitee = message.payloadString;
+            inviteMessage.innerHTML = "We cordially invite " + invitee + " to light the oil lamp"
+            inviteMessage.style.opacity = 1;
+          }
+
+          if (message.destinationName == "lampState/lamp1"){
+            inviteMessage.style.opacity = 0;
+            if (message.payloadString == "1"){
+            	console.log("l1on");
+                state1.style.backgroundColor = "#27FF00";
+                state1.style.color = "black";
+                console.log("l1onsasaf");
+
+                state1.textContent = "ON";
+
+            }
+            else if (message.payloadString == "0"){
+            	console.log("l1off")
+                state1.style.backgroundColor = "#ff0000";
+                state1.style.color = "white";
+                state1.textContent = "OFF";
+            }
+          }
+          else if (message.destinationName == "lampState/lamp2"){
+            inviteMessage.style.opacity = 0;
+            if (message.payloadString == "1"){
+                state2.style.backgroundColor = "#27FF00";
+                state2.style.color = "black";
+                state2.textContent = "ON";
+            }
+            else if (message.payloadString == "0"){
+                state2.style.backgroundColor = "#ff0000";
+                state2.style.color = "white";
+                state2.textContent = "OFF";
+            }
+          }
+          else if (message.destinationName == "lampState/lamp3"){
+            inviteMessage.style.opacity = 0;
+            if (message.payloadString == "1"){
+                state3.style.backgroundColor = "#27FF00";
+                state3.style.color = "black";
+                state3.textContent = "ON";
+            }
+            else if (message.payloadString == "0"){
+                state3.style.backgroundColor = "#ff0000";
+                state3.style.color = "white";
+                state3.textContent = "OFF";
+            }
+          }
+        }
+
+        var button1 = document.getElementById("lamp1Button");
+        var button2 = document.getElementById("lamp2Button");
+        var button3 = document.getElementById("lamp3Button");
+
+        function sendLampMQTT(buttonNumber){
+            message = new Paho.MQTT.Message(String(buttonNumber));
+            message.destinationName = "lampON";
+            client.send(message);
+        }
+
+        button1.addEventListener("click",function(){sendLampMQTT(1)});
+        button2.addEventListener("click",function(){sendLampMQTT(2)});
+        button3.addEventListener("click",function(){sendLampMQTT(3)});
+
+
+
+    </script>
+
+  </body>
+
+</html>

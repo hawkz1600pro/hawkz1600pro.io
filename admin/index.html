@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<style>
+body {
+    background-image: url("../img/wallpaper.png");
+    color : white;
+}
+
+input[type=text], select {
+    width: 250px;
+    padding: 4px 6px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color : #e6f7ff;
+
+}
+
+h1,h2,h3,h4,h5,h6,span, .inviteButton,.state, div, .state{font-family:Catamaran,Helvetica,Arial,sans-serif;font-weight:200;letter-spacing:1px;color:black;}
+
+.inviteButton {
+
+    width: 80px;
+    height : 30px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left : 1%;
+    background-color: #2994ad; 
+    border: 2px solid #2994ad; 
+
+}
+
+.inviteButton {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.inviteButton:hover {
+    background-color: #00aaff; 
+    color: white;
+}
+
+#initialHidden {
+	opacity: 0;
+}
+
+#initialHidden {
+	-webkit-transition-duration: 4s; /* Safari */
+    transition-duration: 1s;
+}
+
+#passwordMessage {
+	color : red
+}
+
+.state {
+    display : block;
+    -webkit-transition-duration: 2s; /* Safari */
+    transition-duration: 2s;
+
+    width : 150px;
+    height : 62px;
+    display: table-cell;
+    text-align :center;
+    vertical-align: center;
+    color : white;
+    background-color:#ff0000;
+    border: 2px solid black; 
+    margin-top : 10px;
+    margin-left:20px;
+    font-size:20px;
+    border-radius: 30px;
+    font-family:Catamaran;
+    }
+
+
+    #bullet {
+      font-family:Catamaran;
+      font-size:20px;
+      color: red;
+    }
+
+    #bullet span{
+      font-family:Catamaran;
+      font-size:20px;
+      color: black;
+    }
+
+    ul {
+        text-align: center;
+        list-style-position: inside;
+    }
+
+    .white{
+        color:black;
+    }
+
+    #row_main {
+      opacity : 0;
+      -webkit-transition-duration: 1s; /* Safari */
+      transition-duration: 1s;
+    }
+
+</style>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>IOT Oil Lamp</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/new-age.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<center>
+<br> <br>
+
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100">
+      <div class="col-lg-7 my-auto">
+        <div class="header-content mx-auto">
+          <h1 class="mb-5">Welcome, Master of Ceremonies<h1>
+          <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Proceed to Authenticate</a>
+        </div>
+      </div>
+      <div class="col-lg-5 my-auto">
+        <div class="device-container">
+          <div class="device-mockup iphone6_plus portrait white">
+            <div class="device">
+              <div class="screen">
+                <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
+              </div>
+   
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<section class="download bg-primary text-center" id="download">
+  <div class="container">
+    
+    <div class ="row">
+      <div class="col-md-8 mx-auto">
+        <h1 class = "white"> Master of Ceremonies </h1>
+
+        <div id = "loading">
+          <br>
+          <p> lamp not connected </p>
+          <img src = ../img/loading.gif> 
+        </div>
+
+        <div id = "row_main">
+
+
+          <span class = "white" id = "passwordSection">
+          Enter Admin Password :    <input id = "inputPassword" type = "password" name = "admin_password"> <button id = "passwordButton" class = "inviteButton"> Confirm </button> <br> <br> <span id = "passwordMessage"></span> <br>
+
+          </span>
+
+
+
+          <div class = "white" id = "initialHidden">
+          <form>
+            Invitee 1: <input id = "inviteeName1" type = "text"  name = "invitee1"> <button id = "inviteButton1" class = "inviteButton"> Invite </button> <br>
+            Invitee 2: <input id = "inviteeName2" type = "text"  name = "invitee2"> <button id = "inviteButton2" class = "inviteButton"> Invite </button> <br>
+            Invitee 3: <input id = "inviteeName3" type = "text"  name = "invitee3"> <button id = "inviteButton3" class = "inviteButton"> Invite </button> <br> <br>
+
+            <button id = "lamp1Ind" class = "state"> Lamp 1 OFF  </button> <br>
+            <button id = "lamp2Ind" class = "state"> Lamp 2 OFF  </button> <br>
+            <button id = "lamp3Ind" class = "state"> Lamp 3 OFF  </button> <br> <br>
+          </form>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul> 
+    <li  id = "bullet"> <span> <span id = "connectMessage">Not connected </span> to server</span></li>
+  </ul>
+
+</section>
+
+</center>
+
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="../js/new-age.min.js"></script>
+
+<script src="../Lib/mqttws31.js" type="text/javascript"></script>
+
+<script>
+	const truePassword = "io"
+
+	var hiddenItems = document.getElementById("initialHidden");
+	var passwordSection = document.getElementById("passwordSection");
+	var passwordMessage = document.getElementById("passwordMessage");
+
+	var showItems = function() {
+		var inputPassword = document.getElementById("inputPassword").value;
+		if (inputPassword === truePassword){
+			passwordSection.style.opacity = 0;
+			passwordSection.style.display = "none";
+			hiddenItems.style.opacity = 1;
+
+		}
+		else {
+			passwordMessage.innerHTML = "Incorrect Password!" ;
+		}
+	}
+
+	var passwordButton = document.getElementById("passwordButton");
+	passwordButton.addEventListener("click", showItems)
+
+
+	// Create a client instance
+    client = new Paho.MQTT.Client("iot.eclipse.org", 443,"/ws", String(Math.floor((Math.random() * 1000000))));
+
+    // set callback handlers
+    client.onConnectionLost = onConnectionLost;
+    client.onMessageArrived = onMessageArrived;
+
+    // connect the client
+    client.connect({onSuccess:onConnect, useSSL : true});
+
+    var bullet = document.getElementById("bullet");
+    var connectMessage = document.getElementById("connectMessage");
+
+    // called when the client connects
+    function onConnect() {
+        bullet.style.color = "green"
+        connectMessage.textContent = "Connected"
+      // Once a connection has been made, make a subscription and send a message.
+       console.log("onConnect");
+       client.subscribe("lampState/#");
+       client.subscribe("lampNodeConnect");
+
+       
+       message = new Paho.MQTT.Message("Hello");
+       message.destinationName = "lampConnect";
+       client.send(message);
+    }
+
+    // called when the client loses its connection
+    function onConnectionLost(responseObject) {
+
+        bullet.style.color = "red"
+        connectMessage.textContent = "Not connected"
+      if (responseObject.errorCode !== 0) {
+        console.log("onConnectionLost:"+ responseObject.errorMessage);
+      }
+    }
+
+    var state1 = document.getElementById("lamp1Ind");
+    var state2 = document.getElementById("lamp2Ind");
+    var state3 = document.getElementById("lamp3Ind");
+
+    var loading = document.getElementById("loading");
+    var row_main = document.getElementById("row_main");
+
+    // called when a message arrives
+    function onMessageArrived(message) {
+      console.log("onMessageArrived:"+message.payloadString);
+      console.log("topic " + message.destinationName);
+
+      if (message.destinationName == "lampNodeConnect"){
+        console.log("dfsaf")
+        loading.style.display = "none"
+        row_main.style.opacity = 1
+      }
+
+     if (message.destinationName == "lampState/lamp1"){
+         if (message.payloadString === "1"){
+             state1.style.backgroundColor = "#27FF00";
+             state1.style.color = "black";
+             state1.textContent = "Lamp 1 ON";
+         }
+         else if (message.payloadString === "0"){
+             state1.style.backgroundColor = "ff0000";
+             state1.style.color = "white";
+             state1.textContent = "Lamp 1 OFF";
+         }
+       }
+       else if (message.destinationName == "lampState/lamp2"){
+         if (message.payloadString === "1"){
+             state2.style.backgroundColor = "#27FF00";
+             state2.style.color = "black";
+             state2.textContent = "Lamp 2 ON";
+         }
+         else if (message.payloadString === "0"){
+             state2.style.backgroundColor = "ff0000";
+             state2.style.color = "white";
+             state2.textContent = "Lamp 2 OFF";
+         }
+       }
+       else if (message.destinationName == "lampState/lamp3"){
+         if (message.payloadString === "1"){
+             state3.style.backgroundColor = "#27FF00";
+             state3.style.color = "black";
+             state3.textContent = "Lamp 3 ON";
+         }
+         else if (message.payloadString === "0"){
+             state3.style.backgroundColor = "ff0000";
+             state3.style.color = "white";
+             state3.textContent = "Lamp 3 OFF";
+         }
+       }
+    }
+
+    var inviteButton1 = document.getElementById("inviteButton1");
+    var inviteButton2 = document.getElementById("inviteButton2");
+    var inviteButton3 = document.getElementById("inviteButton3");
+
+    function invitePerson (personName) {
+    	message = new Paho.MQTT.Message(personName);
+    	message.destinationName = "lampInvite";
+    	client.send(message);
+    }
+
+    inviteButton1.addEventListener("click", function(e){
+    	e.preventDefault();
+    	invitePerson(document.getElementById("inviteeName1").value)} );
+    inviteButton2.addEventListener("click", function(e){
+    	e.preventDefault();
+    	invitePerson(document.getElementById("inviteeName2").value)} );
+    inviteButton3.addEventListener("click", function(e){
+    	e.preventDefault();
+    	invitePerson(document.getElementById("inviteeName3").value)} );
+
+</script>
+
+</body>
+
+</html>
